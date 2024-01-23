@@ -11,6 +11,7 @@ int main(void) {
   float montototalhorarios = 0.0;
   float montototalcomision = 0.0;
   float montototal = 0.0;
+  float porcentajeventas;
 
   do {
     printf("Ingrese que categoria de empleado:\n ");
@@ -41,12 +42,14 @@ int main(void) {
         conthorarios++;
         break;
       case 3:
-        printf("Ingrese las ventas realizadas: ");
+        printf("Ingrese ganancia de ventas realizadas: ");
         scanf("%d", &ventas);
         if (ventas == 0) {
           printf("Usted no tiene comisión\n");
         } else {
-          sueldototal = 425.99+(425.99*0.046);
+          porcentajeventas= ventas+(ventas*0.0046);
+          sueldototal = porcentajeventas+425.99;
+          
           printf("Su sueldo total es: $%.2f\n", sueldototal);
           montototalcomision += sueldototal;
           contcomision++;
@@ -81,6 +84,6 @@ int main(void) {
   montototal=montototalgerentes+montototalhorarios+montototalcomision;
   printf("Total de sueldos: $%.2f\n", montototal);
 
-  return 0;
-  
-    }
+  return 0;
+  
+    }
